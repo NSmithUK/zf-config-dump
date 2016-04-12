@@ -20,6 +20,27 @@ class DumpConfigController extends AbstractActionController {
 
         $config = $this->getServiceLocator()->get('Config');
 
+        //---
+
+        // By default, hide the following common keys.
+        // @todo - add flags to allow these to be included.
+
+        $hide = [
+            'controllers',
+            'service_manager',
+            'view_manager',
+            'email_view_manager',
+            'view_helpers',
+            'router',
+            'console'
+        ];
+
+        foreach($hide as $key){
+            unset($config[$key]);
+        }
+
+        //---
+
         $filter = $this->getRequest()->getParam('filter');
 
         if( $filter ){
