@@ -31,7 +31,7 @@ class DumpConfigController extends AbstractActionController {
                 if( array_key_exists( $key, $config ) ){
                     $config = $config[$key];
                 } else {
-                    die("Unable to find config value for key {$filter}");
+                    die("Unable to find config value for key {$filter}\n");
                 }
 
             }
