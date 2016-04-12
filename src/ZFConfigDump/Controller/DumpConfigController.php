@@ -4,6 +4,10 @@ namespace ZFConfigDump\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Console\Request as ConsoleRequest;
 
+use Symfony\Component\VarDumper\Cloner\VarCloner;
+
+use ZFConfigDump\Dumper\CliDumper;
+
 class DumpConfigController extends AbstractActionController {
 
     public function dumpAction(){
@@ -34,7 +38,9 @@ class DumpConfigController extends AbstractActionController {
 
         }
 
-        dump($config);
+        (new CliDumper)->dump(
+            (new VarCloner)->cloneVar( $config )
+        );
 
     }
 

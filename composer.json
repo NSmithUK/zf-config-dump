@@ -1,8 +1,15 @@
 {
   "name": "nsmithuk/zf-config-dump",
-  "description": "Dump an application's config to the terminal",
+  "description": "Dumps an application's config to the terminal",
   "minimum-stability": "stable",
   "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "cli",
+    "config",
+    "module",
+    "zf2"
+  ],
   "authors": [
     {
       "name": "Neil Smith",
